@@ -26,7 +26,10 @@
         <td>{{$value->id}}</td>
         <td>{{$value->title}}</td>
         <td><img width="50" src="/uploads/{{$value->pathname}}"></td>
-        <td><a href="/admin/picdelete/{{$value->id}}">删除</a> </td>
+        <td>
+            <a href="/admin/piccontent/{{$value->id}}">详情</a>|
+            <a href="/admin/picdelete/{{$value->id}}">删除</a>
+        </td>
     </tr>
     @endforeach
 </table>

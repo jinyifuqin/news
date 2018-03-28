@@ -54,7 +54,6 @@ class UserController extends Controller
         $obj->username = $req['username'];
         $obj->email = $req['email'];
         $obj->password = $req['psw'];
-        $obj->content = $req['content'];
         $re = $obj->save();
         if($re){
             return "success!";
@@ -71,7 +70,6 @@ class UserController extends Controller
      */
     public function piclist()
     {
-        echo "<pre>";var_dump(phpinfo());exit;
         $data =  Pic::all();
         return view("admin.pic",['data'=>$data]);
         //
@@ -80,7 +78,7 @@ class UserController extends Controller
     public function picsave(Request $request){
         $obj = new Pic();
         $obj->title = $request->title;
-
+        $obj->content = $_POST['content'];
 
         $res = Pic::where('title',$obj->title)->get();
         if(count($res))
@@ -118,6 +116,12 @@ class UserController extends Controller
         }
 //        echo "<pre>";var_dump($id);
         //
+    }
+
+    public function piccontent($id){
+        $res = Pic::where('id',$id)->get();
+        return view('admin/piccontent',['res'=>$res]);
+//        echo "<pre>";var_dump($res);
     }
 
     /**
