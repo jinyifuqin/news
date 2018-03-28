@@ -10,6 +10,7 @@
     {{ csrf_field() }}
     标题：<input type="text" name="title"/><br/>
     图片：<input type="file" name="picname"/><br/>
+    内容：<textarea name="content"></textarea>
     <input value="上传" type="submit">
 </form>
 

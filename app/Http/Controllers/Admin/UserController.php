@@ -20,11 +20,6 @@ class UserController extends Controller
      */
     public function index()
     {
-//        $u = camel_case('helloworld');
-//        echo "<pre>";var_dump($u);exit;
-//        $c = file_get_contents('/mnt/hgfs/work/news/app/Pic.php');
-//        echo "<pre>";var_dump($c);
-//        exit;
         return view('admin.index');
         //
     }
@@ -59,6 +54,7 @@ class UserController extends Controller
         $obj->username = $req['username'];
         $obj->email = $req['email'];
         $obj->password = $req['psw'];
+        $obj->content = $req['content'];
         $re = $obj->save();
         if($re){
             return "success!";
