@@ -28,11 +28,10 @@
                     <button type="submit" class="btn-lg btn btn-primary">登录</button>
                 </div>
                 <div class=" col-sm-2">
-                    <a href="/admin/register">
-                        <button class="btn-lg btn btn-primary">
+                        <a href="/admin/register" class="btn-lg btn btn-primary">
                             用户注册
-                        </button>
-                    </a>
+                        </a>
+
                 </div>
             </div>
         </form>

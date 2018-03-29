@@ -1,17 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>用户首页</title>
-</head>
-<body>
-    <h3>用户注册</h3>
-    <form action="/admin/save" method="post">
-        {{ csrf_field() }}
-        用户名：<input type="text" name="username"/><br/>
-        电子邮箱：<input type="email" name="email"/><br/>
-        密码：<input type="password" name="psw"/><br/>
-        <input value="登录" type="submit">
-    </form>
-</body>
-</html>
+@extends('layout')
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 style="text-align: center">用户注册</h3>
+            </div>
+        </div>
+        <form  class="form-horizontal" role="form" action="/admin/save" method="post">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label for="firstname" class="col-sm-2 control-label">用户名：</label>
+                <div class="col-sm-5">
+                    <input type="text" name="username" class="form-control" id="firstname" placeholder="请输入名字">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label for="secname" class="col-sm-2 control-label">电子邮件：</label>
+                <div class="col-sm-5">
+                    <input type="email" name="email" class="form-control" id="secname" placeholder="请输入名字">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label for="thname" class="col-sm-2 control-label">密码：</label>
+                <div class="col-sm-5">
+                    <input type="password" name="psw" class="form-control" id="thname" placeholder="请输入名字">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-2">
+                    <button type="submit" class="btn-lg btn btn-primary">登录</button>
+                </div>
+            </div>
+        </form>
+    </div>
+@stop
