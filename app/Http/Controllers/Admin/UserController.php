@@ -56,11 +56,18 @@ class UserController extends Controller
         $obj->password = $req['psw'];
         $re = $obj->save();
         if($re){
-            return "success!";
+            return view('/admin/wait')->with(
+                [
+                    'message'=>'你已经注册成功，请等待！',
+                    'url' =>'/admin/user',
+                    'jumpTime'=>10,
+                ]
+            );
         }else{
             return false;
         }
     }
+
 
     /**
      * Store a newly created resource in storage.

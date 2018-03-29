@@ -31,9 +31,11 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-2">
-                    <button type="submit" class="btn-lg btn btn-primary">登录</button>
+                    <button type="submit" class="btn-lg btn btn-primary">注册</button>
                 </div>
             </div>
         </form>
+
     </div>
+
 @stop
