@@ -15,11 +15,12 @@
     <script type="text/javascript">
         $(function(){
             var url = "{{$url}}";
-            var loginTime = parseInt($('.loginTime').text());
+            var num = parseInt($('.loginTime').text());
+            var loginTime = num;
             var time = setInterval(function(){
                 loginTime = loginTime-1;
                 $('.loginTime').text(loginTime);
-                $('.progress-bar').css('width',loginTime+'0%');
+                $('.progress-bar').css('width',parseFloat(loginTime)*100/parseFloat(num)+'%');
                 if(loginTime==0){
                     clearInterval(time);
                     window.location.href=url;

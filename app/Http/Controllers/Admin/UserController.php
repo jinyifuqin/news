@@ -60,7 +60,7 @@ class UserController extends Controller
                 [
                     'message'=>'你已经注册成功，请等待！',
                     'url' =>'/admin/user',
-                    'jumpTime'=>10,
+                    'jumpTime'=>8,
                 ]
             );
         }else{
