@@ -9,9 +9,9 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <img style="width: 100%;" class="img-circle" src="/uploads/{{$value->pathname}}"/>
+                <img style="width: 100%;" class="img-thumbnail" src="/uploads/{{$value->pathname}}"/>
             </div>
-            <div class="col-md-9 well well-lg" style="background-color: #dedef8;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;min-height: 200px;">
+            <div class="col-md-9 well well-lg" style="background-color: #dedef8;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;min-height: 23em;">
             {{$value->content}}
             </div>
         </div>

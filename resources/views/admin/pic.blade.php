@@ -1,37 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>用户首页</title>
-</head>
-<body>
-<h3>用户登录</h3>
-<form action="/admin/picsave" method="post" enctype="multipart/form-data" >
-    {{ csrf_field() }}
-    标题：<input type="text" name="title"/><br/>
-    图片：<input type="file" name="picname"/><br/>
-    内容：<textarea name="content"></textarea>
-    <input value="上传" type="submit">
-</form>
+@extends('layout')
+@section('content')
 
-<table>
+<div class="container" style="padding-top: 2em;">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/admin/editshow" class=" btn btn-primary" style="text-align: center">添加日志</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+<table class="table table-striped">
+    <thead>
     <tr>
-        <td>编号</td>
-        <td>标题</td>
-        <td>图片展示</td>
-        <td>操作</td>
+        <th>编号</th>
+        <th>标题</th>
+        <th>图片展示</th>
+        <th>操作</th>
     </tr>
+    </thead>
+    <tbody>
     @foreach($data as $value)
     <tr>
         <td>{{$value->id}}</td>
         <td>{{$value->title}}</td>
-        <td><img width="50" src="/uploads/{{$value->pathname}}"></td>
+        <td><img width="30" class="img-thumbnail" src="/uploads/{{$value->pathname}}"></td>
         <td>
             <a href="/admin/piccontent/{{$value->id}}">详情</a>|
             <a href="/admin/picdelete/{{$value->id}}">删除</a>
         </td>
     </tr>
     @endforeach
+    </tbody>
 </table>
-</body>
-</html>
+</div>
+
+@stop

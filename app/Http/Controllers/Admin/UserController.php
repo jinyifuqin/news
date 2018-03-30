@@ -43,6 +43,10 @@ class UserController extends Controller
         return view('admin.register');
     }
 
+    public function editshow(){
+        return view('admin.editshow');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
